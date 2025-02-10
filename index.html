@@ -35,16 +35,12 @@
             }
         }
 
-        h1 {
+        h1, h2 {
             color: #ffffff;
             text-align: center;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            overflow: hidden;
         }
 
         .dashboard {
@@ -62,25 +58,25 @@
             font-size: 20px;
             font-weight: bold;
             color: #ffffff;
-            background: linear-gradient(45deg, #3498db, #8e44ad); /* 使用渐变背景 */
+            background: linear-gradient(45deg, #3498db, #8e44ad);
             border: none;
-            border-radius: 15px; /* 圆角 */
+            border-radius: 15px;
             cursor: pointer;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
             max-width: 300px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 更深的阴影效果 */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .dashboard button:hover {
-            transform: translateY(-5px); /* 悬停时轻微向上移动 */
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* 强化阴影 */
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
         .dashboard button:active {
-            transform: translateY(0); /* 按下按钮时还原 */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dashboard button span {
@@ -88,7 +84,6 @@
             z-index: 2;
         }
 
-        /* github star */
         .github-star {
             position: absolute;
             top: 20px;
@@ -104,13 +99,12 @@
 </head>
 <body>
 
-    <!-- github button -->
     <div class="github-star">
         <a class="github-button" href="https://github.com/Apcoev/AnimatAI" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Barqawiz/Tamagotchi on GitHub">Star</a>
     </div>
 
-    <h1>ANIMAT</h1>
-    <h2>Give Identity to Your AI</h2>
+    <h1 id="title"></h1>
+    <h2 id="subtitle"></h2>
 
     <div class="dashboard">
         <button onclick="window.location.href='cat.html'"><span>Cat</span></button>
@@ -119,7 +113,29 @@
         <button onclick="window.location.href='notion.html'"><span>Notion</span></button>
     </div>
 
-    <!-- github script -->
+    <script>
+        // 逐字打字效果函数
+        function typeText(elementId, text, speed) {
+            let i = 0;
+            const element = document.getElementById(elementId);
+            const interval = setInterval(() => {
+                element.innerHTML += text.charAt(i);
+                i++;
+                if (i === text.length) {
+                    clearInterval(interval);
+                }
+            }, speed);
+        }
+
+        // 设置标题和副标题的内容并调用逐字打字函数
+        window.onload = () => {
+            typeText('title', 'ANIMAT', 150); // 设置标题逐字打字
+            setTimeout(() => {
+                typeText('subtitle', 'Give Identity to Your AI', 100); // 设置副标题逐字打字
+            }, 1500); // 在标题完成后开始副标题
+        };
+    </script>
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
