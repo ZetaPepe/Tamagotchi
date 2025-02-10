@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANIMAT AI</title>
     
-    <!-- 设置 favicon -->
-    <!-- 如果你有 .png 格式的图标，也可以使用如下 -->
-    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1a1a1a, #000000);
-            background-size: 300% 300%; /* 扩大背景以产生平滑渐变效果 */
-            animation: gradientAnimation 8s ease infinite; /* 绑定动画 */
+            background-size: 300% 300%; 
+            animation: gradientAnimation 8s ease infinite;
             margin: 0;
             padding: 0;
             display: flex;
@@ -55,7 +53,7 @@
             justify-content: center;
             max-width: 800px;
             width: 100%;
-            gap: 20px;
+            gap: 30px;
         }
 
         .dashboard button {
@@ -64,26 +62,25 @@
             font-size: 20px;
             font-weight: bold;
             color: #ffffff;
-            background-color: #2980b9;
+            background: linear-gradient(45deg, #3498db, #8e44ad); /* 使用渐变背景 */
             border: none;
-            border-radius: 12px;
+            border-radius: 15px; /* 圆角 */
             cursor: pointer;
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
             max-width: 300px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 更深的阴影效果 */
         }
 
         .dashboard button:hover {
-            background-color: #3498db;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px); /* 悬停时轻微向上移动 */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* 强化阴影 */
         }
 
         .dashboard button:active {
-            transform: translateY(0);
-            box-shadow: none;
+            transform: translateY(0); /* 按下按钮时还原 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
         }
 
         .dashboard button span {
@@ -120,7 +117,6 @@
         <button onclick="window.location.href='plant.html'"><span>Plant</span></button>
         <button onclick="window.location.href='eyes.html'"><span>Eyes</span></button>
         <button onclick="window.location.href='notion.html'"><span>Notion</span></button>
-        <!-- add more buttons -->
     </div>
 
     <!-- github script -->
