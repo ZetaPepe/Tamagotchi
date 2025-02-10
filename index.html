@@ -7,9 +7,9 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 黑蓝渐变色 */
+            background: linear-gradient(135deg, #1a1a1a, #000000);
             background-size: 300% 300%; /* 扩大背景以产生平滑渐变效果 */
-            animation: gradientAnimation 6s ease infinite; /* 绑定动画 */
+            animation: gradientAnimation 8s ease infinite; /* 绑定动画 */
             margin: 0;
             padding: 0;
             display: flex;
@@ -32,8 +32,16 @@
             }
         }
 
-        h1, h2 {
+        h1 {
             color: #ffffff;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .dashboard {
@@ -73,6 +81,12 @@
             box-shadow: none;
         }
 
+        .dashboard button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* github star */
         .github-star {
             position: absolute;
             top: 20px;
@@ -104,6 +118,7 @@
         <!-- add more buttons -->
     </div>
 
+    <!-- github script -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
