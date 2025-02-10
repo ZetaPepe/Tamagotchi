@@ -7,7 +7,9 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a, #000000); /* 深灰到黑色的渐变 */
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            background-size: 300% 300%; /* 扩大背景以产生平滑渐变效果 */
+            animation: gradientAnimation 8s ease infinite; /* 绑定动画 */
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,8 +20,20 @@
             position: relative;
         }
 
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         h1 {
-            color: #ffffff; /* 白色字体适应深色背景 */
+            color: #ffffff;
             text-align: center;
             margin-bottom: 5px;
         }
@@ -45,7 +59,7 @@
             font-size: 20px;
             font-weight: bold;
             color: #ffffff;
-            background-color: #2980b9; /* Attractive blue */
+            background-color: #2980b9;
             border: none;
             border-radius: 12px;
             cursor: pointer;
@@ -57,7 +71,7 @@
         }
 
         .dashboard button:hover {
-            background-color: #3498db; /* Lighter blue on hover */
+            background-color: #3498db;
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
